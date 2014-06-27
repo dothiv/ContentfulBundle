@@ -1,0 +1,25 @@
+{
+    "name": "dothiv/contentful-bundle",
+    "description": "ContentfulBundle for the Symfony Framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Markus Tacker",
+            "email": "m@dotHIV.org"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Dothiv\\ContentfulBundle": ""
+        }
+    },
+    "target-dir": "Dothiv/ContentfulBundle",
+    "minimum-stability": "stable",
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}

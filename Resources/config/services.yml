@@ -1,0 +1,31 @@
+parameters:
+    dothiv_contentful.content.class: Dothiv\ContentfulBundle\Adapter\RepositoryContentAdapter
+    dothiv_contentful.asset.class: Dothiv\ContentfulBundle\Adapter\FilesystemAssetAdapter
+    dothiv_contentful.task.sync.class: Dothiv\ContentfulBundle\Task\SyncTask
+    dothiv_contentful.sync.client.class: Dothiv\ContentfulBundle\Client\HttpClient
+
+services:
+    dothiv_contentful.asset:
+        class: %dothiv_contentful.asset.class%
+        arguments:
+          - %dothiv_contentful.web_path%
+          - %dothiv_contentful.local_path%
+          - @dothiv_contentful.repo.asset
+
+    dothiv_contentful.content:
+        class: %dothiv_contentful.content.class%
+        arguments:
+          - @dothiv_contentful.repo.content_type
+          - @dothiv_contentful.repo.entry
+          - @dothiv_contentful.repo.asset
+          - @dothiv_contentful.asset
+
+    dothiv_contentful.task.sync:
+        class: %dothiv_contentful.task.sync.class%
+        arguments:
+          - @dothiv_contentful.sync.client
+          - @event_dispatcher
+          - @dothiv_contentful.repo.status
+
+    dothiv_contentful.sync.client:
+        class: %dothiv_contentful.sync.client.class%
