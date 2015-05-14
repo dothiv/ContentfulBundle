@@ -1,7 +1,14 @@
 parameters:
-    dothiv_contentful.content.class: Dothiv\Bundle\ContentfulBundle\Adapter\RepositoryContentAdapter
+    dothiv_contentful.content.class: Dothiv\Bundle\ContentfulBundle\Output\Content
+    dothiv_contentful.content_repository.class: Dothiv\Bundle\ContentfulBundle\Adapter\RepositoryContentAdapter
     dothiv_contentful.asset.class: Dothiv\Bundle\ContentfulBundle\Adapter\FilesystemAssetAdapter
     dothiv_contentful.service.webhook_user.class: Dothiv\Bundle\ContentfulBundle\Service\WebhookUserService
+    dothiv_contentful.view_builder.class: Dothiv\Bundle\ContentfulBundle\Output\ViewBuilder
+    dothiv_contentful.image_scaler.class: Dothiv\Bundle\ContentfulBundle\Output\ImageAssetScaler
+    dothiv_contentful.imagine.class: Imagine\Gmagick\Imagine
+    dothiv_contentful.twig.extension.class: Dothiv\Bundle\ContentfulBundle\Twig\Extension\ContentfulTwigExtension
+    dothiv_contentful.translation.strings_loader.class: Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader
+
 
 services:
     dothiv_contentful.asset:
@@ -11,8 +18,8 @@ services:
           - %dothiv_contentful.local_path%
           - @dothiv_contentful.repo.asset
 
-    dothiv_contentful.content:
-        class: %dothiv_contentful.content.class%
+    dothiv_contentful.content_repository:
+        class: %dothiv_contentful.content_repository.class%
         arguments:
           - @dothiv_contentful.repo.content_type
           - @dothiv_contentful.repo.entry
@@ -23,3 +30,32 @@ services:
         class: %dothiv_contentful.service.webhook_user.class%
         arguments:
          - %dothiv_contentful.webhook%
+    
+    dothiv_contentful.view_builder:
+            class: %dothiv_contentful.view_builder.class%
+            arguments:
+                - 'en'
+                - @dothiv_contentful.content_repository
+                - @dothiv_contentful.event_dispatcher
+
+    dothiv_contentful.image_scaler:
+        class: %dothiv_contentful.image_scaler.class%
+        arguments:
+            - 'en'
+            - @dothiv_contentful.asset
+            - @dothiv_contentful.image_scaler
+
+    dothiv_contentful.imagine:
+        class: %dothiv_contentful.imagine.class%
+        lazy: true
+
+    dothiv_contentful.image_scaler:
+        class: %dothiv_contentful.image_scaler.class%
+        lazy: true
+        arguments:
+          - @dothiv_contentful.imagine
+
+    dothiv_contentful.event_dispatcher:
+        class: Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher
+        arguments:
+            - @service_container

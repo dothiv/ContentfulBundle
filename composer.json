@@ -18,7 +18,9 @@
     "config": {
         "bin-dir": "bin"
     },
-    "require": {},
+    "require": {
+      "imagine/imagine": "0.6.*"
+    },
     "require-dev": {
         "phpunit/phpunit": "*"
     }

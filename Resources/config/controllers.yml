@@ -6,7 +6,7 @@ services:
         class: %dothiv_contentful.controller.webhook.class%
         arguments:
          - @dothiv_contentful.repo.content_type
-         - @event_dispatcher
+         - @dothiv_contentful.event_dispatcher
          - @doctrine.orm.entity_manager
         calls:
          - [ setLogger, [@logger] ]
