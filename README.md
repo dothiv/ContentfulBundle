@@ -9,3 +9,26 @@
 This is a Symfony2 bundle for providing a local queryable cache of [Contentful](https://www.contentful.com/) entries and assets.
 
 It's a subtree split off [dothiv/dothiv](https://github.com/dothiv/dothiv).
+
+## Setup
+
+The cache needs a database.
+
+    # Create database if not created before
+    sudo su postgres
+    psql
+    CREATE USER contentful;
+    CREATE DATABASE contentful;
+    GRANT ALL PRIVILEGES ON DATABASE contentful TO contentful;
+    ALTER USER contentful WITH PASSWORD 'password';
+
+    # Update the schema
+    app/console doctrine:schema:update --force
+    
+## Usage
+
+### Sync content
+
+Use 
+    app/console contentful:sync <spaceid> <access_token>
+to make your content available locally.
