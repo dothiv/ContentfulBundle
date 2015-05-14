@@ -20,6 +20,7 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('httpBasicUsername')->defaultValue('contentful_api')->end()
                         ->scalarNode('httpBasicPassword')->isRequired()->end()
                     ->end()
+                    ->isRequired()
                 ->end()
             ->end();
         return $treeBuilder;
