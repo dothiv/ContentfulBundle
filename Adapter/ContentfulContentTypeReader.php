@@ -1,8 +1,8 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
 
 class ContentfulContentTypeReader
 {

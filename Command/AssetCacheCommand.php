@@ -1,12 +1,12 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Command;
+namespace Dothiv\Bundle\ContentfulBundle\Command;
 
 use Doctrine\Common\Cache\Cache;
 use Doctrine\ORM\EntityManager;
-use Dothiv\ContentfulBundle\Adapter\HttpClientAdapter;
-use Dothiv\ContentfulBundle\Exception\RuntimeException;
-use Dothiv\ContentfulBundle\Logger\OutputInterfaceLogger;
+use Dothiv\Bundle\ContentfulBundle\Adapter\HttpClientAdapter;
+use Dothiv\Bundle\ContentfulBundle\Exception\RuntimeException;
+use Dothiv\Bundle\ContentfulBundle\Logger\OutputInterfaceLogger;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -23,8 +23,8 @@ class AssetCacheCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        /** @var $adapter \Dothiv\ContentfulBundle\Adapter\ContentfulAssetAdapterInterface */
-        /** @var $assetRepo \Dothiv\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface */
+        /** @var $adapter \Dothiv\Bundle\ContentfulBundle\Adapter\ContentfulAssetAdapterInterface */
+        /** @var $assetRepo \Dothiv\Bundle\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface */
         $adapter   = $this->getContainer()->get('dothiv_contentful.asset');
         $assetRepo = $this->getContainer()->get('dothiv_contentful.repo.asset');
         $adapter->setLogger(new OutputInterfaceLogger($output));

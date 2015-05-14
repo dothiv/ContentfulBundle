@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Item;
+namespace Dothiv\Bundle\ContentfulBundle\Item;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          @ORM\Index(name="contentful_entry__spaceId_idx", columns={"spaceId"})
  *      }
  * )
- * @ORM\Entity(repositoryClass="Dothiv\ContentfulBundle\Repository\DoctrineContentfulEntryRepository")
+ * @ORM\Entity(repositoryClass="Dothiv\Bundle\ContentfulBundle\Repository\DoctrineContentfulEntryRepository")
  */
 class ContentfulEntry implements ContentfulItem
 {

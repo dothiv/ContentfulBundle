@@ -1,12 +1,12 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Repository;
+namespace Dothiv\Bundle\ContentfulBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
 use Dothiv\BusinessBundle\Repository\Traits\ValidatorTrait;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
-use Dothiv\ContentfulBundle\Item\ContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry;
 use PhpOption\Option;
 
 class DoctrineContentfulEntryRepository extends EntityRepository implements ContentfulEntryRepository
@@ -58,10 +58,10 @@ class DoctrineContentfulEntryRepository extends EntityRepository implements Cont
     {
         // Do not rely on Mysql Group By.
         $query   = $this->getEntityManager()->createQuery(
-            'SELECT e1 FROM Dothiv\ContentfulBundle\Item\ContentfulEntry e1 '
+            'SELECT e1 FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry e1 '
             . 'WHERE e1.contentTypeId = :contentTypeId '
             . 'AND e1.spaceId = :spaceId '
-            . 'AND e1.revision = (SELECT MAX(e2.revision) FROM Dothiv\ContentfulBundle\Item\ContentfulEntry e2 WHERE e2.id = e1.id AND e2.spaceId = :spaceId)')
+            . 'AND e1.revision = (SELECT MAX(e2.revision) FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry e2 WHERE e2.id = e1.id AND e2.spaceId = :spaceId)')
             ->setParameter('contentTypeId', $contentType->getId())
             ->setParameter('spaceId', $contentType->getSpaceId())
         ;
@@ -78,11 +78,11 @@ class DoctrineContentfulEntryRepository extends EntityRepository implements Cont
     function findByContentTypeIdAndName($spaceId, $contentTypeId, $name)
     {
         $query = $this->getEntityManager()->createQuery(
-            'SELECT e1 FROM Dothiv\ContentfulBundle\Item\ContentfulEntry e1 '
+            'SELECT e1 FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry e1 '
             . 'WHERE e1.name = :name '
             . 'AND e1.contentTypeId = :contentTypeId '
             . 'AND e1.spaceId = :spaceId '
-            . 'AND e1.revision = (SELECT MAX(e2.revision) FROM Dothiv\ContentfulBundle\Item\ContentfulEntry e2 WHERE e2.id = e1.id AND e2.spaceId = :spaceId)'
+            . 'AND e1.revision = (SELECT MAX(e2.revision) FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry e2 WHERE e2.id = e1.id AND e2.spaceId = :spaceId)'
         )
             ->setParameter('contentTypeId', $contentTypeId)
             ->setParameter('spaceId', $spaceId)

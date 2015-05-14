@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Client;
+namespace Dothiv\Bundle\ContentfulBundle\Client;
 
 interface HttpClientInterface
 {

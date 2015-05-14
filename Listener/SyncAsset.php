@@ -1,11 +1,11 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Listener;
+namespace Dothiv\Bundle\ContentfulBundle\Listener;
 
-use Dothiv\ContentfulBundle\Event\ContentfulAssetEvent;
-use Dothiv\ContentfulBundle\Item\ContentfulAsset;
-use Dothiv\ContentfulBundle\Item\Traits\ContentfulItem;
-use Dothiv\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulAssetEvent;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
+use Dothiv\Bundle\ContentfulBundle\Item\Traits\ContentfulItem;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
 
 class SyncAsset
 {

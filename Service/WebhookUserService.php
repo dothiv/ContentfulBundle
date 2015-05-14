@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Dothiv\ContentfulBundle\Service;
+namespace Dothiv\Bundle\ContentfulBundle\Service;
 
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
@@ -47,6 +47,6 @@ class WebhookUserService implements UserProviderInterface
      */
     public function supportsClass($class)
     {
-        return $class === 'Dothiv\ContentfulBundle\Service\WebhookUser';
+        return $class === 'Dothiv\Bundle\ContentfulBundle\Service\WebhookUser';
     }
 } 

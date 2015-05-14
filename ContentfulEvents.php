@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle;
+namespace Dothiv\Bundle\ContentfulBundle;
 
 final class ContentfulEvents
 {

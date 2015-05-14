@@ -1,8 +1,8 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Event;
+namespace Dothiv\Bundle\ContentfulBundle\Event;
 
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
 use Symfony\Component\EventDispatcher\Event;
 
 class ContentfulContentTypeEvent extends Event

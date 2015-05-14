@@ -1,14 +1,14 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Command;
+namespace Dothiv\Bundle\ContentfulBundle\Command;
 
 use Doctrine\Common\Cache\Cache;
 use Doctrine\ORM\EntityManager;
-use Dothiv\ContentfulBundle\Adapter\HttpClientAdapter;
-use Dothiv\ContentfulBundle\Logger\OutputInterfaceLogger;
-use Dothiv\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
-use Dothiv\ContentfulBundle\Repository\ContentfulContentTypeRepository;
-use Dothiv\ContentfulBundle\Repository\ContentfulEntryRepository;
+use Dothiv\Bundle\ContentfulBundle\Adapter\HttpClientAdapter;
+use Dothiv\Bundle\ContentfulBundle\Logger\OutputInterfaceLogger;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulContentTypeRepository;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulEntryRepository;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Helper\TableHelper;
 use Symfony\Component\Console\Input\InputInterface;

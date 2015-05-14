@@ -1,11 +1,11 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Repository;
+namespace Dothiv\Bundle\ContentfulBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
 use Dothiv\BusinessBundle\Repository\Traits\ValidatorTrait;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
 use PhpOption\Option;
 
 class DoctrineContentfulContentTypeRepository extends EntityRepository implements ContentfulContentTypeRepository
@@ -54,10 +54,10 @@ class DoctrineContentfulContentTypeRepository extends EntityRepository implement
     public function findNewestByName($spaceId, $name)
     {
         $query = $this->getEntityManager()->createQuery(
-            'SELECT c1 FROM Dothiv\ContentfulBundle\Item\ContentfulContentType c1 '
+            'SELECT c1 FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType c1 '
             . 'WHERE c1.name = :name '
             . 'AND c1.spaceId = :spaceId '
-            . 'AND c1.revision = (SELECT MAX(c2.revision) FROM Dothiv\ContentfulBundle\Item\ContentfulContentType c2 WHERE c2.id = c1.id AND c2.spaceId = :spaceId)'
+            . 'AND c1.revision = (SELECT MAX(c2.revision) FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType c2 WHERE c2.id = c1.id AND c2.spaceId = :spaceId)'
         )
             ->setParameter('name', $name)
             ->setParameter('spaceId', $spaceId);
@@ -70,8 +70,8 @@ class DoctrineContentfulContentTypeRepository extends EntityRepository implement
     public function findAllBySpaceId($spaceId)
     {
         $query = $this->getEntityManager()->createQuery(
-            'SELECT c1 FROM Dothiv\ContentfulBundle\Item\ContentfulContentType c1 '
-            . 'WHERE c1.revision = (SELECT MAX(c2.revision) FROM Dothiv\ContentfulBundle\Item\ContentfulContentType c2 WHERE c2.id = c1.id AND c2.spaceId = :spaceId) '
+            'SELECT c1 FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType c1 '
+            . 'WHERE c1.revision = (SELECT MAX(c2.revision) FROM Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType c2 WHERE c2.id = c1.id AND c2.spaceId = :spaceId) '
             . 'AND c1.spaceId = :spaceId'
         )->setParameter('spaceId', $spaceId);
         return new ArrayCollection($query->getResult());

@@ -1,22 +1,22 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Client\HttpClientInterface;
-use Dothiv\ContentfulBundle\ContentfulEvents;
-use Dothiv\ContentfulBundle\Event\ContentfulAssetEvent;
-use Dothiv\ContentfulBundle\Event\ContentfulContentTypeEvent;
-use Dothiv\ContentfulBundle\Event\ContentfulContentTypesEvent;
-use Dothiv\ContentfulBundle\Event\ContentfulEntryEvent;
-use Dothiv\ContentfulBundle\Event\DeletedContentfulEntryEvent;
-use Dothiv\ContentfulBundle\Exception\InvalidArgumentException;
-use Dothiv\ContentfulBundle\Exception\RuntimeException;
-use Dothiv\ContentfulBundle\Item\ContentfulAsset;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
-use Dothiv\ContentfulBundle\Item\DeletedContentfulEntry;
-use Dothiv\ContentfulBundle\Logger\LoggerAwareTrait;
-use Dothiv\ContentfulBundle\Adapter\ContentfulEntityReader;
+use Dothiv\Bundle\ContentfulBundle\Client\HttpClientInterface;
+use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulAssetEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypesEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulEntryEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\DeletedContentfulEntryEvent;
+use Dothiv\Bundle\ContentfulBundle\Exception\InvalidArgumentException;
+use Dothiv\Bundle\ContentfulBundle\Exception\RuntimeException;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\DeletedContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Logger\LoggerAwareTrait;
+use Dothiv\Bundle\ContentfulBundle\Adapter\ContentfulEntityReader;
 use PhpOption\Option;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

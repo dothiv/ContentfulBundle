@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Exception;
+namespace Dothiv\Bundle\ContentfulBundle\Exception;
 
 interface ExceptionInterface
 {

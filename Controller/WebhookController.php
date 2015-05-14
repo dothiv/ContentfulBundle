@@ -1,19 +1,19 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Controller;
+namespace Dothiv\Bundle\ContentfulBundle\Controller;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\ObjectManager;
-use Dothiv\ContentfulBundle\Adapter\ContentfulContentTypeReader;
-use Dothiv\ContentfulBundle\Adapter\ContentfulEntityReader;
-use Dothiv\ContentfulBundle\ContentfulEvents;
-use Dothiv\ContentfulBundle\Event\ContentfulAssetEvent;
-use Dothiv\ContentfulBundle\Event\ContentfulContentTypeEvent;
-use Dothiv\ContentfulBundle\Event\ContentfulEntryEvent;
-use Dothiv\ContentfulBundle\Event\DeletedContentfulEntryEvent;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
-use Dothiv\ContentfulBundle\Logger\LoggerAwareTrait;
-use Dothiv\ContentfulBundle\Repository\ContentfulContentTypeRepository;
+use Dothiv\Bundle\ContentfulBundle\Adapter\ContentfulContentTypeReader;
+use Dothiv\Bundle\ContentfulBundle\Adapter\ContentfulEntityReader;
+use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulAssetEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulEntryEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\DeletedContentfulEntryEvent;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Logger\LoggerAwareTrait;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulContentTypeRepository;
 use Psr\Log\LoggerAwareInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;

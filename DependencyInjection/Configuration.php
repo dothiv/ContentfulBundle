@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\DependencyInjection;
+namespace Dothiv\Bundle\ContentfulBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

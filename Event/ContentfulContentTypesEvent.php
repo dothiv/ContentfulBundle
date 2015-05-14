@@ -1,9 +1,9 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Event;
+namespace Dothiv\Bundle\ContentfulBundle\Event;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
 use Symfony\Component\EventDispatcher\Event;
 
 class ContentfulContentTypesEvent extends Event

@@ -1,8 +1,8 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Event;
+namespace Dothiv\Bundle\ContentfulBundle\Event;
 
-use Dothiv\ContentfulBundle\Item\DeletedContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Item\DeletedContentfulEntry;
 use Symfony\Component\EventDispatcher\Event;
 
 class DeletedContentfulEntryEvent extends Event

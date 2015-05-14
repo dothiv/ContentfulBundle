@@ -1,9 +1,9 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Repository;
+namespace Dothiv\Bundle\ContentfulBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Item\ContentfulAsset;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
 use PhpOption\Option;
 
 interface ContentfulAssetRepositoryInterface

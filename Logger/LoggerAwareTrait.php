@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Logger;
+namespace Dothiv\Bundle\ContentfulBundle\Logger;
 
 use PhpOption\Option;
 use Psr\Log\LoggerInterface;

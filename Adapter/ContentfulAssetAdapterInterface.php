@@ -1,8 +1,8 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
-use Dothiv\ContentfulBundle\Item\ContentfulAsset;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
 use Psr\Log\LoggerAwareInterface;
 
 interface ContentfulAssetAdapterInterface extends LoggerAwareInterface

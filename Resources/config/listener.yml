@@ -1,9 +1,9 @@
 parameters:
-    dothiv_contentful.sync.content_type_listener.class: Dothiv\ContentfulBundle\Listener\SyncContentType
-    dothiv_contentful.delete.content_type_listener.class: Dothiv\ContentfulBundle\Listener\DeleteContentType
-    dothiv_contentful.sync.entry_sync_listener.class: Dothiv\ContentfulBundle\Listener\SyncEntry
-    dothiv_contentful.sync.entry_delete_listener.class: Dothiv\ContentfulBundle\Listener\DeleteEntry
-    dothiv_contentful.sync.asset_listener.class: Dothiv\ContentfulBundle\Listener\SyncAsset
+    dothiv_contentful.sync.content_type_listener.class: Dothiv\Bundle\ContentfulBundle\Listener\SyncContentType
+    dothiv_contentful.delete.content_type_listener.class: Dothiv\Bundle\ContentfulBundle\Listener\DeleteContentType
+    dothiv_contentful.sync.entry_sync_listener.class: Dothiv\Bundle\ContentfulBundle\Listener\SyncEntry
+    dothiv_contentful.sync.entry_delete_listener.class: Dothiv\Bundle\ContentfulBundle\Listener\DeleteEntry
+    dothiv_contentful.sync.asset_listener.class: Dothiv\Bundle\ContentfulBundle\Listener\SyncAsset
 
 services:
     dothiv_contentful.sync.content_type_listener:

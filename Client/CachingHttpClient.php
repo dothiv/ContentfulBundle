@@ -1,10 +1,10 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Client;
+namespace Dothiv\Bundle\ContentfulBundle\Client;
 
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Exception\RuntimeException;
+use Dothiv\Bundle\ContentfulBundle\Exception\RuntimeException;
 
 class CachingHttpClient implements HttpClientInterface
 {

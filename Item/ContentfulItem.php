@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Item;
+namespace Dothiv\Bundle\ContentfulBundle\Item;
 
 interface ContentfulItem
 {

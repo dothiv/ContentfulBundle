@@ -1,8 +1,8 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Command;
+namespace Dothiv\Bundle\ContentfulBundle\Command;
 
-use Dothiv\ContentfulBundle\Client\HttpClient;
+use Dothiv\Bundle\ContentfulBundle\Client\HttpClient;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

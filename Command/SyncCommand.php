@@ -1,12 +1,12 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Command;
+namespace Dothiv\Bundle\ContentfulBundle\Command;
 
 use Doctrine\Common\Cache\Cache;
 use Doctrine\ORM\EntityManager;
-use Dothiv\ContentfulBundle\Adapter\HttpClientAdapter;
-use Dothiv\ContentfulBundle\Client\HttpClient;
-use Dothiv\ContentfulBundle\Logger\OutputInterfaceLogger;
+use Dothiv\Bundle\ContentfulBundle\Adapter\HttpClientAdapter;
+use Dothiv\Bundle\ContentfulBundle\Client\HttpClient;
+use Dothiv\Bundle\ContentfulBundle\Logger\OutputInterfaceLogger;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

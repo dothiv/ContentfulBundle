@@ -1,9 +1,9 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Client;
+namespace Dothiv\Bundle\ContentfulBundle\Client;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Exception\RuntimeException;
+use Dothiv\Bundle\ContentfulBundle\Exception\RuntimeException;
 use PhpOption\Option;
 
 class HttpClient implements HttpClientInterface

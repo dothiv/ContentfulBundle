@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Service;
+namespace Dothiv\Bundle\ContentfulBundle\Service;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 

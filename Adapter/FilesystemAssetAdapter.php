@@ -1,12 +1,12 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
-use Dothiv\ContentfulBundle\Exception\InvalidArgumentException;
-use Dothiv\ContentfulBundle\Exception\RuntimeException;
-use Dothiv\ContentfulBundle\Item\ContentfulAsset;
-use Dothiv\ContentfulBundle\Logger\LoggerAwareTrait;
-use Dothiv\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
+use Dothiv\Bundle\ContentfulBundle\Exception\InvalidArgumentException;
+use Dothiv\Bundle\ContentfulBundle\Exception\RuntimeException;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
+use Dothiv\Bundle\ContentfulBundle\Logger\LoggerAwareTrait;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
 use Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
 
 class FilesystemAssetAdapter implements ContentfulAssetAdapterInterface

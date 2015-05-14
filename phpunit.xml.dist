@@ -26,7 +26,6 @@
         </whitelist>
     </filter>
 
-
     <logging>
         <log type="coverage-html" target="build/coverage" title="v2.DeinBus.de"
              charset="UTF-8" yui="true" highlight="true"

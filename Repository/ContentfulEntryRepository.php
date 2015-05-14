@@ -1,10 +1,10 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Repository;
+namespace Dothiv\Bundle\ContentfulBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
-use Dothiv\ContentfulBundle\Item\ContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry;
 use PhpOption\Option;
 
 interface ContentfulEntryRepository

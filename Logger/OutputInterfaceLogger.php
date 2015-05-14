@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Logger;
+namespace Dothiv\Bundle\ContentfulBundle\Logger;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Output\OutputInterface;

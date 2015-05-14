@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\DependencyInjection;
+namespace Dothiv\Bundle\ContentfulBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -50,7 +50,7 @@ class DothivContentfulExtension extends Extension implements PrependExtensionInt
             'type'   => 'annotation',
             'alias'  => 'ContentfulBundle',
             'dir'    => __DIR__ . '/../Item',
-            'prefix' => 'Dothiv\ContentfulBundle\Item'
+            'prefix' => 'Dothiv\Bundle\ContentfulBundle\Item'
         );
         $container->prependExtensionConfig('doctrine', $doctrineConfig);
     }

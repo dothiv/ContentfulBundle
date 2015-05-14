@@ -1,10 +1,10 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Exception\InvalidArgumentException;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Exception\InvalidArgumentException;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
 use PhpOption\Option;
 
 interface ContentfulContentAdapter

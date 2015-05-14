@@ -1,12 +1,12 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Item\ContentfulAsset;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
-use Dothiv\ContentfulBundle\Item\ContentfulEntry;
-use Dothiv\ContentfulBundle\Item\DeletedContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Item\DeletedContentfulEntry;
 
 class ContentfulEntityReader
 {

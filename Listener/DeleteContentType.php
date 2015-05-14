@@ -1,18 +1,18 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Listener;
+namespace Dothiv\Bundle\ContentfulBundle\Listener;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\ContentfulEvents;
-use Dothiv\ContentfulBundle\Event\ContentfulContentTypeEvent;
-use Dothiv\ContentfulBundle\Event\ContentfulContentTypesEvent;
-use Dothiv\ContentfulBundle\Event\ContentfulEntryEvent;
-use Dothiv\ContentfulBundle\Event\DeletedContentfulEntryEvent;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
-use Dothiv\ContentfulBundle\Item\DeletedContentfulEntry;
-use Dothiv\ContentfulBundle\Item\Traits\ContentfulItem;
-use Dothiv\ContentfulBundle\Repository\ContentfulContentTypeRepository;
-use Dothiv\ContentfulBundle\Repository\ContentfulEntryRepository;
+use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypesEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulEntryEvent;
+use Dothiv\Bundle\ContentfulBundle\Event\DeletedContentfulEntryEvent;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Item\DeletedContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Item\Traits\ContentfulItem;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulContentTypeRepository;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulEntryRepository;
 
 class DeleteContentType
 {

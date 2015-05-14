@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Item\Traits;
+namespace Dothiv\Bundle\ContentfulBundle\Item\Traits;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;

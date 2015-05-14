@@ -1,14 +1,14 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\ContentfulBundle\Exception\InvalidArgumentException;
-use Dothiv\ContentfulBundle\Item\ContentfulAsset;
-use Dothiv\ContentfulBundle\Item\ContentfulContentType;
-use Dothiv\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
-use Dothiv\ContentfulBundle\Repository\ContentfulContentTypeRepository;
-use Dothiv\ContentfulBundle\Repository\ContentfulEntryRepository;
+use Dothiv\Bundle\ContentfulBundle\Exception\InvalidArgumentException;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulContentTypeRepository;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulEntryRepository;
 use PhpOption\Option;
 use Symfony\Component\Routing\RouterInterface;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Listener;
+namespace Dothiv\Bundle\ContentfulBundle\Listener;
 
-use Dothiv\ContentfulBundle\Event\ContentfulEntryEvent;
-use Dothiv\ContentfulBundle\Item\ContentfulEntry;
-use Dothiv\ContentfulBundle\Item\Traits\ContentfulItem;
-use Dothiv\ContentfulBundle\Repository\ContentfulEntryRepository;
+use Dothiv\Bundle\ContentfulBundle\Event\ContentfulEntryEvent;
+use Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry;
+use Dothiv\Bundle\ContentfulBundle\Item\Traits\ContentfulItem;
+use Dothiv\Bundle\ContentfulBundle\Repository\ContentfulEntryRepository;
 
 class SyncEntry
 {

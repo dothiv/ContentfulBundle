@@ -1,19 +1,19 @@
 {
-    "name": "dothiv/contentful-bundle",
+    "name": "dothiv/dothiv-contentful-bundle",
     "description": "ContentfulBundle for the Symfony Framework",
     "license": "MIT",
     "authors": [
         {
             "name": "Markus Tacker",
-            "email": "m@dotHIV.org"
+            "email": "m@tld.hiv"
         }
     ],
     "autoload": {
         "psr-0": {
-            "Dothiv\\ContentfulBundle": ""
+            "Dothiv\\Bundle\\DothivContentfulBundle": ""
         }
     },
-    "target-dir": "Dothiv/ContentfulBundle",
+    "target-dir": "Dothiv/Bundle/DothivContentfulBundle",
     "minimum-stability": "stable",
     "config": {
         "bin-dir": "bin"

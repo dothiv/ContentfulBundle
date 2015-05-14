@@ -1,6 +1,6 @@
 <?php
 
-namespace Dothiv\ContentfulBundle\Adapter;
+namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
 use Psr\Log\LoggerAwareInterface;
 
