@@ -4,13 +4,12 @@ namespace Dothiv\Bundle\ContentfulBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
-use Dothiv\BusinessBundle\Repository\Traits\ValidatorTrait;
 use Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset;
 use PhpOption\Option;
 
 class DoctrineContentfulAssetRepository extends EntityRepository implements ContentfulAssetRepositoryInterface
 {
-    use ValidatorTrait;
+    use Traits\ValidatorTrait;
     
     /**
      * {@inheritdoc}
