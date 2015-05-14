@@ -1,8 +1,7 @@
 parameters:
     dothiv_contentful.content.class: Dothiv\ContentfulBundle\Adapter\RepositoryContentAdapter
     dothiv_contentful.asset.class: Dothiv\ContentfulBundle\Adapter\FilesystemAssetAdapter
-    dothiv_contentful.task.sync.class: Dothiv\ContentfulBundle\Task\SyncTask
-    dothiv_contentful.sync.client.class: Dothiv\ContentfulBundle\Client\HttpClient
+    dothiv_contentful.service.webhook_user.class: Dothiv\ContentfulBundle\Service\WebhookUserService
 
 services:
     dothiv_contentful.asset:
@@ -20,12 +19,7 @@ services:
           - @dothiv_contentful.repo.asset
           - @dothiv_contentful.asset
 
-    dothiv_contentful.task.sync:
-        class: %dothiv_contentful.task.sync.class%
+    dothiv_contentful.service.webhook_user:
+        class: %dothiv_contentful.service.webhook_user.class%
         arguments:
-          - @dothiv_contentful.sync.client
-          - @event_dispatcher
-          - @dothiv_contentful.repo.status
-
-    dothiv_contentful.sync.client:
-        class: %dothiv_contentful.sync.client.class%
+         - %dothiv_contentful.webhook%

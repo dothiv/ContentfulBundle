@@ -1,0 +1,12 @@
+parameters:
+    dothiv_contentful.controller.webhook.class: Dothiv\ContentfulBundle\Controller\WebhookController
+
+services:
+    dothiv_contentful.controller.webhook:
+        class: %dothiv_contentful.controller.webhook.class%
+        arguments:
+         - @dothiv_contentful.repo.content_type
+         - @event_dispatcher
+         - @doctrine.orm.entity_manager
+        calls:
+         - [ setLogger, [@logger] ]

@@ -6,15 +6,15 @@ use Dothiv\ContentfulBundle\Exception\InvalidArgumentException;
 use Dothiv\ContentfulBundle\Exception\RuntimeException;
 use Dothiv\ContentfulBundle\Item\ContentfulAsset;
 use Dothiv\ContentfulBundle\Logger\LoggerAwareTrait;
-use Dothiv\ContentfulBundle\Repository\ContentfulAssetRepository;
+use Dothiv\ContentfulBundle\Repository\ContentfulAssetRepositoryInterface;
 use Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
 
-class FilesystemAssetAdapter implements ContentfulAssetAdapter
+class FilesystemAssetAdapter implements ContentfulAssetAdapterInterface
 {
     use LoggerAwareTrait;
 
     /**
-     * @var ContentfulAssetRepository
+     * @var ContentfulAssetRepositoryInterface
      */
     private $assetRepo;
 
@@ -31,9 +31,9 @@ class FilesystemAssetAdapter implements ContentfulAssetAdapter
     /**
      * @param string                    $webPath
      * @param string                    $localPath
-     * @param ContentfulAssetRepository $assetRepo
+     * @param ContentfulAssetRepositoryInterface $assetRepo
      */
-    public function __construct($webPath, $localPath, ContentfulAssetRepository $assetRepo)
+    public function __construct($webPath, $localPath, ContentfulAssetRepositoryInterface $assetRepo)
     {
         $this->webPath   = rtrim($webPath, '/');
         $this->localPath = rtrim($localPath, '/');
@@ -80,6 +80,7 @@ class FilesystemAssetAdapter implements ContentfulAssetAdapter
      * @param string          $locale
      *
      * @return string|null
+     * @throws InvalidArgumentException
      */
     protected function getExtension(ContentfulAsset $asset, $locale)
     {
@@ -104,14 +105,24 @@ class FilesystemAssetAdapter implements ContentfulAssetAdapter
      * @return void
      * @throws RuntimeException
      */
-    function cache(ContentfulAsset $asset)
+    public function cache(ContentfulAsset $asset)
     {
+        if (!isset($asset->file)) {
+            $this->log('Asset %s has no file.', $asset);
+            return;
+        }
         foreach ($asset->file as $locale => $file) {
+            if (!$file) {
+                // File not published.
+                $this->log('Asset %s contains unpublished file for %s.', $asset, $locale);
+                continue;
+            }
             $localFile = $this->getLocalFile($asset, $locale);
             if ($localFile->isFile()) {
                 continue;
             }
-            $this->log('Caching "%s" file for asset "%s" as "%s" ...',
+            $this->log(
+                'Caching "%s" file for asset "%s" as "%s" ...',
                 $locale,
                 $asset->getId(),
                 $localFile->getPathname()

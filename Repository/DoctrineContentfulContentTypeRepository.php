@@ -4,11 +4,14 @@ namespace Dothiv\ContentfulBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
+use Dothiv\BusinessBundle\Repository\Traits\ValidatorTrait;
 use Dothiv\ContentfulBundle\Item\ContentfulContentType;
 use PhpOption\Option;
 
 class DoctrineContentfulContentTypeRepository extends EntityRepository implements ContentfulContentTypeRepository
 {
+    use ValidatorTrait;
+    
     /**
      * {@inheritdoc}
      */
@@ -23,7 +26,8 @@ class DoctrineContentfulContentTypeRepository extends EntityRepository implement
      */
     public function persist(ContentfulContentType $contentType)
     {
-        $this->getEntityManager()->persist($contentType);
+        $this->getEntityManager()->persist($this->validate($contentType));
+        return $this;
     }
 
     /**
@@ -32,6 +36,16 @@ class DoctrineContentfulContentTypeRepository extends EntityRepository implement
     public function remove(ContentfulContentType $contentType)
     {
         $this->getEntityManager()->remove($contentType);
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    function flush()
+    {
+        $this->getEntityManager()->flush();
+        return $this;
     }
 
     /**

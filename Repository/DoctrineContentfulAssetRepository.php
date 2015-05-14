@@ -4,11 +4,14 @@ namespace Dothiv\ContentfulBundle\Repository;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityRepository;
+use Dothiv\BusinessBundle\Repository\Traits\ValidatorTrait;
 use Dothiv\ContentfulBundle\Item\ContentfulAsset;
 use PhpOption\Option;
 
-class DoctrineContentfulAssetRepository extends EntityRepository implements ContentfulAssetRepository
+class DoctrineContentfulAssetRepository extends EntityRepository implements ContentfulAssetRepositoryInterface
 {
+    use ValidatorTrait;
+    
     /**
      * {@inheritdoc}
      */
@@ -23,7 +26,7 @@ class DoctrineContentfulAssetRepository extends EntityRepository implements Cont
      */
     function persist(ContentfulAsset $asset)
     {
-        $this->getEntityManager()->persist($asset);
+        $this->getEntityManager()->persist($this->validate($asset));
     }
 
     /**

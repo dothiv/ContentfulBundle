@@ -19,10 +19,12 @@ class DothivContentfulExtension extends Extension implements PrependExtensionInt
         $config        = $this->processConfiguration($configuration, $configs);
         $container->setParameter('dothiv_contentful.web_path', $config['web_path']);
         $container->setParameter('dothiv_contentful.local_path', $config['local_path']);
+        $container->setParameter('dothiv_contentful.webhook', $config['webhook']);
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('listener.yml');
         $loader->load('persistence.yml');
+        $loader->load('controllers.yml');
     }
 
     /**
@@ -32,22 +34,24 @@ class DothivContentfulExtension extends Extension implements PrependExtensionInt
      */
     public function prepend(ContainerBuilder $container)
     {
+        $cacheConfig    = array();
         $doctrineConfig = array();
 
-        $doctrineConfig['orm']['mappings']['contentful_bundle_item'] = array(
+        $cacheConfig['providers']['contentful_api_cache'] = array(
+            'namespace'   => 'contentful_api',
+            'type'        => 'file_system',
+            'file_system' => array(
+                'directory' => '%kernel.root_dir%/cache/contentful'
+            )
+        );
+        $container->prependExtensionConfig('doctrine_cache', $cacheConfig);
+
+        $doctrineConfig['orm']['mappings']['contentful_bundle'] = array(
             'type'   => 'annotation',
-            'alias'  => 'ContentfulBundleItem',
+            'alias'  => 'ContentfulBundle',
             'dir'    => __DIR__ . '/../Item',
             'prefix' => 'Dothiv\ContentfulBundle\Item'
         );
-
-        $doctrineConfig['orm']['mappings']['contentful_bundle_entity'] = array(
-            'type'   => 'annotation',
-            'alias'  => 'ContentfulBundleEntity',
-            'dir'    => __DIR__ . '/../Entity',
-            'prefix' => 'Dothiv\ContentfulBundle\Entity'
-        );
-
         $container->prependExtensionConfig('doctrine', $doctrineConfig);
     }
 }
