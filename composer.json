@@ -13,7 +13,7 @@
             "Dothiv\\Bundle\\DothivContentfulBundle": ""
         }
     },
-    "target-dir": "Dothiv/Bundle/DothivContentfulBundle",
+    "target-dir": "",
     "minimum-stability": "stable",
     "config": {
         "bin-dir": "bin"
