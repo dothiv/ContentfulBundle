@@ -2,7 +2,6 @@
 
 namespace Dothiv\Bundle\ContentfulBundle\Tests\Translation;
 
-
 use Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry;
 use Dothiv\Bundle\ContentfulBundle\Output\Content;
 use Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader;
@@ -20,7 +19,7 @@ class ContentfulStringsLoaderTest extends \PHPUnit_Framework_TestCase
      */
     public function itShouldBeInstantiable()
     {
-        $this->assertInstanceOf('\Dothiv\BaseWebsiteBundle\Translation\ContentfulStringsLoader', $this->getTestObject());
+        $this->assertInstanceOf('\Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader', $this->getTestObject());
     }
 
     /**

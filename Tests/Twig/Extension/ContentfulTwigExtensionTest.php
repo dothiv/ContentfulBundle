@@ -21,7 +21,7 @@ class ContentfulTest extends \PHPUnit_Framework_TestCase
      */
     public function itShouldBeInstantiable()
     {
-        $this->assertInstanceOf('\Dothiv\BaseWebsiteBundle\Twig\Extension\ContentfulTwigExtension', $this->getTestObject());
+        $this->assertInstanceOf('\Dothiv\Bundle\ContentfulBundle\Twig\Extension\ContentfulTwigExtension', $this->getTestObject());
     }
 
     /**
@@ -156,7 +156,7 @@ class ContentfulTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->mockContent = $this->getMockBuilder('\Dothiv\BaseWebsiteBundle\Contentful\Content')
+        $this->mockContent = $this->getMockBuilder('\Dothiv\Bundle\ContentfulBundle\Output\Content')
             ->disableOriginalConstructor()
             ->getMock();
     }

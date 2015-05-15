@@ -106,6 +106,6 @@ class ContentfulTwigExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'dothiv_basewebsite_contentful_' . $this->contentFuncName;
+        return 'dothiv_contentful_' . $this->contentFuncName;
     }
 }
