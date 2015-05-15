@@ -3,7 +3,7 @@
 namespace Dothiv\Bundle\ContentfulBundle\Listener;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\DothivContentfulBundleEvents;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypesEvent;
 use Dothiv\Bundle\ContentfulBundle\Item\ContentfulContentType;
@@ -82,7 +82,7 @@ class SyncContentType
             $old                 = $currentContentTypes->toArray();
             $new                 = $newContentTypes->toArray();
             foreach (array_diff($old, $new) as $deleted) {
-                $event->getDispatcher()->dispatch(ContentfulEvents::CONTENT_TYPE_DELETE, new ContentfulContentTypeEvent(
+                $event->getDispatcher()->dispatch(DothivContentfulBundleEvents::CONTENT_TYPE_DELETE, new ContentfulContentTypeEvent(
                     $this->contentTypeRepo->findNewestById($spaceId, $deleted)->get()
                 ));
             }

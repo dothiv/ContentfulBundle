@@ -3,7 +3,7 @@
 namespace Dothiv\Bundle\ContentfulBundle\Listener;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\DothivContentfulBundleEvents;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypesEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulEntryEvent;
@@ -44,7 +44,7 @@ class DeleteContentType
         $contentType = $event->getContentType();
         foreach ($this->entryRepository->findByContentType($contentType) as $entry) {
             $deletedEntry = DeletedContentfulEntry::fromEntry($entry);
-            $event->getDispatcher()->dispatch(ContentfulEvents::ENTRY_DELETE, new DeletedContentfulEntryEvent($deletedEntry));
+            $event->getDispatcher()->dispatch(DothivContentfulBundleEvents::ENTRY_DELETE, new DeletedContentfulEntryEvent($deletedEntry));
         }
         $this->contentTypeRepo->remove($contentType);
     }

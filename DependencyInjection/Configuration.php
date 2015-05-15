@@ -22,6 +22,18 @@ class Configuration implements ConfigurationInterface
                     ->end()
                     ->isRequired()
                 ->end()
+                ->arrayNode('thumbnails')
+                    ->useAttributeAsKey('label')
+                    ->prototype('array')
+                    ->children()
+                        ->scalarNode('label')->end()
+                        ->scalarNode('width')->end()
+                        ->scalarNode('height')->end()
+                        ->booleanNode('thumbnail')->defaultValue(false)->end()
+                        ->booleanNode('exact')->defaultValue(false)->end()
+                        ->booleanNode('fillbg')->defaultValue(false)->end()
+                    ->end()
+                ->end()
             ->end();
         return $treeBuilder;
     }

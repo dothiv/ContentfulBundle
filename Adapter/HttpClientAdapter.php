@@ -4,7 +4,7 @@ namespace Dothiv\Bundle\ContentfulBundle\Adapter;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Dothiv\Bundle\ContentfulBundle\Client\HttpClientInterface;
-use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\DothivContentfulBundleEvents;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulAssetEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypesEvent;
@@ -85,13 +85,13 @@ class HttpClientAdapter implements ContentfulApiAdapter
             $this->log('Sync: %s', $contentType);
             /** @var ContentfulContentTypeEvent $event */
             $event                        = $this->dispatcher->dispatch(
-                ContentfulEvents::CONTENT_TYPE_SYNC,
+                DothivContentfulBundleEvents::CONTENT_TYPE_SYNC,
                 new ContentfulContentTypeEvent($contentType)
             );
             $types[$contentType->getId()] = $event->getContentType();
         }
         $this->dispatcher->dispatch(
-            ContentfulEvents::CONTENT_TYPE_SYNC_ALL,
+            DothivContentfulBundleEvents::CONTENT_TYPE_SYNC_ALL,
             new ContentfulContentTypesEvent($types)
         );
         return $types;
@@ -106,13 +106,13 @@ class HttpClientAdapter implements ContentfulApiAdapter
             if ($entry) {
                 if ($entry instanceof DeletedContentfulEntry) {
                     $this->log('Delete: %s', $entry);
-                    $this->dispatcher->dispatch(ContentfulEvents::ENTRY_DELETE, new DeletedContentfulEntryEvent($entry));
+                    $this->dispatcher->dispatch(DothivContentfulBundleEvents::ENTRY_DELETE, new DeletedContentfulEntryEvent($entry));
                 } elseif ($entry instanceof ContentfulAsset) {
                     $this->log('Sync: %s', $entry);
-                    $this->dispatcher->dispatch(ContentfulEvents::ASSET_SYNC, new ContentfulAssetEvent($entry));
+                    $this->dispatcher->dispatch(DothivContentfulBundleEvents::ASSET_SYNC, new ContentfulAssetEvent($entry));
                 } else {
                     $this->log('Sync: %s', $entry);
-                    $this->dispatcher->dispatch(ContentfulEvents::ENTRY_SYNC, new ContentfulEntryEvent($entry));
+                    $this->dispatcher->dispatch(DothivContentfulBundleEvents::ENTRY_SYNC, new ContentfulEntryEvent($entry));
                 }
             }
         }

@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\ObjectManager;
 use Dothiv\Bundle\ContentfulBundle\Adapter\ContentfulContentTypeReader;
 use Dothiv\Bundle\ContentfulBundle\Adapter\ContentfulEntityReader;
-use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\DothivContentfulBundleEvents;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulAssetEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulEntryEvent;
@@ -56,7 +56,7 @@ class WebhookController implements LoggerAwareInterface
                 $reader      = new ContentfulContentTypeReader($spaceId);
                 $contentType = $reader->getContentType($data);
                 $this->dispatcher->dispatch(
-                    ContentfulEvents::CONTENT_TYPE_SYNC,
+                    DothivContentfulBundleEvents::CONTENT_TYPE_SYNC,
                     new ContentfulContentTypeEvent($contentType)
                 );
                 break;
@@ -67,7 +67,7 @@ class WebhookController implements LoggerAwareInterface
                 $reader = new ContentfulEntityReader($spaceId, $this->getContentTypes($spaceId));
                 $entry  = $reader->getEntry($data);
                 $this->dispatcher->dispatch(
-                    ContentfulEvents::ENTRY_SYNC,
+                    DothivContentfulBundleEvents::ENTRY_SYNC,
                     new ContentfulEntryEvent($entry)
                 );
                 break;
@@ -75,7 +75,7 @@ class WebhookController implements LoggerAwareInterface
                 $reader = new ContentfulEntityReader($spaceId, $this->getContentTypes($spaceId));
                 $entry  = $reader->getEntry($data);
                 $this->dispatcher->dispatch(
-                    ContentfulEvents::ENTRY_DELETE,
+                    DothivContentfulBundleEvents::ENTRY_DELETE,
                     new DeletedContentfulEntryEvent($entry)
                 );
                 break;
@@ -83,7 +83,7 @@ class WebhookController implements LoggerAwareInterface
                 $reader = new ContentfulEntityReader($spaceId, $this->getContentTypes($spaceId));
                 $entry  = $reader->getEntry($data);
                 $this->dispatcher->dispatch(
-                    ContentfulEvents::ASSET_SYNC,
+                    DothivContentfulBundleEvents::ASSET_SYNC,
                     new ContentfulAssetEvent($entry)
                 );
                 break;

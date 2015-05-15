@@ -9,7 +9,6 @@ parameters:
     dothiv_contentful.twig.extension.class: Dothiv\Bundle\ContentfulBundle\Twig\Extension\ContentfulTwigExtension
     dothiv_contentful.translation.strings_loader.class: Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader
 
-
 services:
     dothiv_contentful.asset:
         class: %dothiv_contentful.asset.class%

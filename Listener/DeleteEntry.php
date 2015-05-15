@@ -3,7 +3,7 @@
 namespace Dothiv\Bundle\ContentfulBundle\Listener;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Dothiv\Bundle\ContentfulBundle\ContentfulEvents;
+use Dothiv\Bundle\ContentfulBundle\DothivContentfulBundleEvents;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypeEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulContentTypesEvent;
 use Dothiv\Bundle\ContentfulBundle\Event\ContentfulEntryEvent;

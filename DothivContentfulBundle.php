@@ -19,5 +19,6 @@ class DothivContentfulBundle extends Bundle
             ),
             PassConfig::TYPE_BEFORE_REMOVING
         );
+        $container->addCompilerPass(new ContentfulThumbnailsCompilerPass());
     }
 }
