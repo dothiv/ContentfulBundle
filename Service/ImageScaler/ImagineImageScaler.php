@@ -6,6 +6,7 @@ namespace Dothiv\Bundle\ContentfulBundle\Service\ImageScaler;
 use Imagine\Image\AbstractImagine;
 use Imagine\Image\Box;
 use Imagine\Image\ImageInterface;
+use Imagine\Image\Palette\RGB;
 use Imagine\Image\Point;
 
 class ImagineImageScaler implements ImageScalerInterface
@@ -45,7 +46,13 @@ class ImagineImageScaler implements ImageScalerInterface
             $img->resize($scaledSize);
             if ($size->getExact()) {
                 // Force image size
-                $bg = $this->imagine->create($newSize);
+                if ($img->palette()->supportsAlpha()) {
+                    $palette = new RGB();
+                    $color = $palette->color('#000', 0);
+                    $bg = $this->imagine->create($newSize, $color);
+                } else {
+                    $bg = $this->imagine->create($newSize);
+                }
 
                 if ($size->getFillbg()) {
                     $this->fillWithBlurredImage($bg, $img);

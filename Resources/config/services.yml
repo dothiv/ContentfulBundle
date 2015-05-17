@@ -6,7 +6,7 @@ parameters:
     dothiv_contentful.view_builder.class: Dothiv\Bundle\ContentfulBundle\Output\ViewBuilder
     dothiv_contentful.image_asset_scaler.class: Dothiv\Bundle\ContentfulBundle\Output\ImageAssetScaler
     dothiv_contentful.image_scaler.class: Dothiv\Bundle\ContentfulBundle\Service\ImageScaler\ImagineImageScaler
-    dothiv_contentful.imagine.class: Imagine\Gmagick\Imagine
+    dothiv_contentful.imagine.class: Imagine\Gd\Imagine
     dothiv_contentful.twig.extension.class: Dothiv\Bundle\ContentfulBundle\Twig\Extension\ContentfulTwigExtension
     dothiv_contentful.translation.strings_loader.class: Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader
 
