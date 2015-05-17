@@ -32,16 +32,16 @@ services:
          - %dothiv_contentful.webhook%
     
     dothiv_contentful.view_builder:
-            class: %dothiv_contentful.view_builder.class%
-            arguments:
-                - 'en'
-                - @dothiv_contentful.content_repository
-                - @dothiv_contentful.event_dispatcher
+        class: %dothiv_contentful.view_builder.class%
+        arguments:
+            - %dothiv_contentful.default_locale%
+            - @dothiv_contentful.content_repository
+            - @dothiv_contentful.event_dispatcher
 
     dothiv_contentful.image_asset_scaler:
         class: %dothiv_contentful.image_asset_scaler.class%
         arguments:
-            - 'en'
+            - %dothiv_contentful.default_locale%
             - @dothiv_contentful.asset
             - @dothiv_contentful.image_scaler
 

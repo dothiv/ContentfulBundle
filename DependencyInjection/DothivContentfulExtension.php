@@ -21,6 +21,7 @@ class DothivContentfulExtension extends Extension implements PrependExtensionInt
         $container->setParameter('dothiv_contentful.local_path', $config['local_path']);
         $container->setParameter('dothiv_contentful.webhook', $config['webhook']);
         $container->setParameter('dothiv_contentful.thumbnails', $config['thumbnails']);
+        $container->setParameter('dothiv_contentful.default_locale', $config['default_locale']);
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('listener.yml');

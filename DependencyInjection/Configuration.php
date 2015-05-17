@@ -15,6 +15,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('web_path')->defaultValue('/contentful')->end()
                 ->scalarNode('local_path')->defaultValue('%kernel.root_dir%/../web/contentful')->end()
+                ->scalarNode('default_locale')->defaultValue('en-US')->end()
                 ->arrayNode('webhook')
                     ->children()
                         ->scalarNode('httpBasicUsername')->defaultValue('contentful_api')->end()
