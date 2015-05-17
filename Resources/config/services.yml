@@ -4,7 +4,8 @@ parameters:
     dothiv_contentful.asset.class: Dothiv\Bundle\ContentfulBundle\Adapter\FilesystemAssetAdapter
     dothiv_contentful.service.webhook_user.class: Dothiv\Bundle\ContentfulBundle\Service\WebhookUserService
     dothiv_contentful.view_builder.class: Dothiv\Bundle\ContentfulBundle\Output\ViewBuilder
-    dothiv_contentful.image_scaler.class: Dothiv\Bundle\ContentfulBundle\Output\ImageAssetScaler
+    dothiv_contentful.image_asset_scaler.class: Dothiv\Bundle\ContentfulBundle\Output\ImageAssetScaler
+    dothiv_contentful.image_scaler.class: Dothiv\Bundle\ContentfulBundle\Service\ImageScaler\ImagineImageScaler
     dothiv_contentful.imagine.class: Imagine\Gmagick\Imagine
     dothiv_contentful.twig.extension.class: Dothiv\Bundle\ContentfulBundle\Twig\Extension\ContentfulTwigExtension
     dothiv_contentful.translation.strings_loader.class: Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader
@@ -37,8 +38,8 @@ services:
                 - @dothiv_contentful.content_repository
                 - @dothiv_contentful.event_dispatcher
 
-    dothiv_contentful.image_scaler:
-        class: %dothiv_contentful.image_scaler.class%
+    dothiv_contentful.image_asset_scaler:
+        class: %dothiv_contentful.image_asset_scaler.class%
         arguments:
             - 'en'
             - @dothiv_contentful.asset

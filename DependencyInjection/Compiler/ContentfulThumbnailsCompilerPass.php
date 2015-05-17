@@ -12,7 +12,7 @@ class ContentfulThumbnailsCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $imageScaler = $container->getDefinition('dothiv_contentful.image_scaler.image_scaler');
+        $imageScaler = $container->getDefinition('dothiv_contentful.image_asset_scaler');
         foreach ($container->getParameter('dothiv_contentful.thumbnails') as $label => $thumbnailConfig) {
             $imageScaler->addMethodCall(
                 'addSize',
