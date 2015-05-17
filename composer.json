@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "Dothiv\\Bundle\\ContentfulBundle": ""
+            "Dothiv\\Bundle\\ContentfulBundle\\": ""
         }
     },
     "target-dir": "",
