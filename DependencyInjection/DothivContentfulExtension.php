@@ -46,6 +46,13 @@ class DothivContentfulExtension extends Extension implements PrependExtensionInt
                 'directory' => '%kernel.root_dir%/cache/contentful'
             )
         );
+        $cacheConfig['providers']['contentful_lastmodified_cache'] = array(
+            'namespace'   => 'contentful_lastmodified_cache',
+            'type'        => 'file_system',
+            'file_system' => array(
+                'directory' => '%kernel.root_dir%/cache/contentful'
+            )
+        );
         $container->prependExtensionConfig('doctrine_cache', $cacheConfig);
 
         $doctrineConfig['orm']['mappings']['contentful_bundle'] = array(

@@ -9,6 +9,8 @@ parameters:
     dothiv_contentful.imagine.class: Imagine\Gd\Imagine
     dothiv_contentful.twig.extension.class: Dothiv\Bundle\ContentfulBundle\Twig\Extension\ContentfulTwigExtension
     dothiv_contentful.translation.strings_loader.class: Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader
+    dothiv_contentful.request_lastmodified_cache.class: Dothiv\Bundle\ContentfulBundle\Cache\RequestLastModifiedCache
+    dothiv_contentful.clock.class: Dothiv\Bundle\Dothiv\ValueObject\ClockValue
 
 services:
     dothiv_contentful.asset:
@@ -59,3 +61,19 @@ services:
         class: Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher
         arguments:
             - @service_container
+
+    dothiv_contentful.request_lastmodified_cache:
+        class: %dothiv_contentful.request_lastmodified_cache.class%
+        arguments:
+         - @doctrine_cache.providers.contentful_lastmodified_cache
+         - @dothiv_contentful.repo.config
+        tags:
+         - { name: dothiv.business.event_listener, event: dothiv.basewebsite.contentful.view.create, method: onViewCreate }
+         - { name: kernel.event_listener, event: contentful.entry.sync, method: onEntryUpdate }
+        calls:
+         - [ setLogger, [@logger] ]
+
+    dothiv_contentful.clock:
+        class: %dothiv_contentful.clock.class%
+        arguments:
+        - 'now'

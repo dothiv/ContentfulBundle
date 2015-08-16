@@ -5,6 +5,8 @@ parameters:
     dothiv_contentful.item.asset.class: Dothiv\Bundle\ContentfulBundle\Item\ContentfulAsset
     dothiv_contentful.repo.entry.class: Dothiv\Bundle\ContentfulBundle\Repository\DoctrineContentfulEntryRepository
     dothiv_contentful.item.entry.class: Dothiv\Bundle\ContentfulBundle\Item\ContentfulEntry
+    dothiv_contentful.repo.config.class: Dothiv\Bundle\ContentfulBundle\Repository\DoctrineConfigRepository
+    dothiv_contentful.entity.config.class: Dothiv\Bundle\ContentfulBundle\Entity\Config
 
 services:
     dothiv_contentful.repo.content_type:
@@ -31,5 +33,14 @@ services:
         factory_method: getRepository
         arguments:
         - %dothiv_contentful.item.entry.class%
+        calls:
+        - [setValidator, ["@validator"]]
+
+    dothiv_contentful.repo.config:
+        class: %dothiv_contentful.repo.config.class%
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+        - %dothiv_contentful.entity.config.class%
         calls:
         - [setValidator, ["@validator"]]

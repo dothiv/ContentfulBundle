@@ -32,6 +32,14 @@ services:
         tags:
             - { name: dothiv_contentful.event_listener, event: dothiv.contentful.view.create, method: onViewCreate }
 
+    acme.contentful.controller.page:
+        class: %dothiv_contentful.controller.page.class%
+        arguments:
+          - @dothiv_contentful.request_lastmodified_cache
+          - @templating
+          - @dothiv_contentful.clock
+          - %contentful_page_lifetime%
+
 dothiv_contenful:
     thumbnails:
         - { label: 'small', width: 200, height: 200 }

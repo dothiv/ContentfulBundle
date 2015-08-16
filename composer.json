@@ -19,10 +19,17 @@
         "bin-dir": "bin"
     },
     "require": {
-      "symfony/framework-bundle": "~2.3",
-      "twig/extensions": "1.0.*",
-      "imagine/imagine": "0.6.*",
-        "phpoption/phpoption": "1.4.*"
+        "symfony/framework-bundle": "~2.3",
+        "twig/extensions": "1.0.*",
+        "imagine/imagine": "0.6.*",
+        "phpoption/phpoption": "1.4.*",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "doctrine/doctrine-bundle": "1.2.*",
+        "doctrine/doctrine-cache-bundle": "1.0.x",
+        "dothiv/dothiv-valueobject-bundle": "1.x",
+        "symfony/twig-bundle": "2.3.*",
+        "gedmo/doctrine-extensions": "dev-master@dev",
+        "symfony/validator": "2.3.*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

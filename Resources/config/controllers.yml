@@ -1,5 +1,6 @@
 parameters:
     dothiv_contentful.controller.webhook.class: Dothiv\Bundle\ContentfulBundle\Controller\WebhookController
+    dothiv_contentful.controller.page.class: Dothiv\Bundle\ContentfulBundle\Controller\PageController
 
 services:
     dothiv_contentful.controller.webhook:
