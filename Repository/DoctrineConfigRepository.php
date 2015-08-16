@@ -1,12 +1,11 @@
 <?php
 
 
-namespace Dothiv\BusinessBundle\Repository;
+namespace Dothiv\Bundle\ContentfulBundle\Repository;
 
 use Doctrine\ORM\EntityRepository as DoctrineEntityRepository;
 use Dothiv\Bundle\ContentfulBundle\Entity\Config;
 use Dothiv\Bundle\ContentfulBundle\Exception\InvalidArgumentException;
-use Dothiv\Bundle\ContentfulBundle\Repository\ConfigRepositoryInterface;
 use PhpOption\Option;
 use Symfony\Component\Validator\ValidatorInterface;
 

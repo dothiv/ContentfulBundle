@@ -10,7 +10,7 @@ parameters:
     dothiv_contentful.twig.extension.class: Dothiv\Bundle\ContentfulBundle\Twig\Extension\ContentfulTwigExtension
     dothiv_contentful.translation.strings_loader.class: Dothiv\Bundle\ContentfulBundle\Translation\ContentfulStringsLoader
     dothiv_contentful.request_lastmodified_cache.class: Dothiv\Bundle\ContentfulBundle\Cache\RequestLastModifiedCache
-    dothiv_contentful.clock.class: Dothiv\Bundle\Dothiv\ValueObject\ClockValue
+    dothiv_contentful.clock.class: Dothiv\ValueObject\ClockValue
 
 services:
     dothiv_contentful.asset:
