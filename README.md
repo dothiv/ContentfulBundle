@@ -32,3 +32,11 @@ The cache needs a database.
 Use 
     app/console contentful:sync <spaceid> <access_token>
 to make your content available locally.
+
+### PageController
+
+[`PageController`](/Controller/PageController.php) contains a controller which can create the
+correct cache headers. As it only listens on contentful item dates it is required to define a
+minimum modification for the app. Run this command after every deploy to set it:
+
+    app/console contentful:config last_modified_content.min_last_modified `date +%FT%T%z`

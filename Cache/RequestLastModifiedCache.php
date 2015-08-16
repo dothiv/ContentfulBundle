@@ -127,7 +127,7 @@ class RequestLastModifiedCache
      */
     protected function getCacheKeyRequest($uri, $type)
     {
-        $cacheKey = 'dothiv_base_website-request_uri-' . $type . '-' . $uri;
+        $cacheKey = 'dothiv_contentful-request_uri-' . $type . '-' . $uri;
         return $cacheKey;
     }
 
@@ -139,7 +139,7 @@ class RequestLastModifiedCache
      */
     protected function getCacheKeyItem($itemId, $type)
     {
-        $cacheKey = 'dothiv_base_website-item_uri-' . $itemId . '-' . $type;
+        $cacheKey = 'dothiv_contentful-item_uri-' . $itemId . '-' . $type;
         return $cacheKey;
     }
 

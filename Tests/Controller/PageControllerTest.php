@@ -216,13 +216,8 @@ class PageControllerTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->mockRenderer = $this->getMockBuilder('\Symfony\Bundle\FrameworkBundle\Templating\EngineInterface')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $this->mockConfigRepo = $this->getMockBuilder('\Dothiv\Bundle\ContentfulBundle\Repository\ConfigRepositoryInterface')
-            ->disableOriginalConstructor()
-            ->getMock();
+        $this->mockRenderer = $this->getMock('\Symfony\Bundle\FrameworkBundle\Templating\EngineInterface');
+        $this->mockConfigRepo = $this->getMock('\Dothiv\Bundle\ContentfulBundle\Repository\ConfigRepositoryInterface');
     }
 
     /**

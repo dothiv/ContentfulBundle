@@ -89,8 +89,6 @@ class RequestLastModifiedCacheTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->mockConfigRepo = $this->getMockBuilder('\Dothiv\Bundle\ContentfulBundle\Repository\ConfigRepositoryInterface')
-            ->disableOriginalConstructor()
-            ->getMock();
+        $this->mockConfigRepo = $this->getMock('\Dothiv\Bundle\ContentfulBundle\Repository\ConfigRepositoryInterface');
     }
 } 

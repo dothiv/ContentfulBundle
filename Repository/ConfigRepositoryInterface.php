@@ -2,9 +2,10 @@
 
 namespace Dothiv\Bundle\ContentfulBundle\Repository;
 
+use Doctrine\Common\Persistence\ObjectRepository;
 use Dothiv\Bundle\ContentfulBundle\Entity\Config;
 
-interface ConfigRepositoryInterface
+interface ConfigRepositoryInterface extends ObjectRepository
 {
     /**
      * Persist the entity.
