@@ -12,7 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Represents a config setting.
  *
  * @ORM\Entity(repositoryClass="Dothiv\Bundle\ContentfulBundle\Repository\DoctrineConfigRepository")
- * @ORM\Table(name="DoctrineConfig")
+ * @ORM\Table(name="ContentfulConfig")
  * @Serializer\ExclusionPolicy("all")
  */
 class Config
