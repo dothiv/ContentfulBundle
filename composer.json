@@ -28,7 +28,7 @@
         "doctrine/doctrine-cache-bundle": "1.0.x",
         "dothiv/dothiv-valueobject-bundle": "1.x",
         "symfony/twig-bundle": "2.3.*",
-        "gedmo/doctrine-extensions": "dev-master@dev",
+        "gedmo/doctrine-extensions": "2.3.*",
         "symfony/validator": "2.3.*"
     },
     "require-dev": {
